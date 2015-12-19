@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+/*banner*/
+#banner{margin:0 auto;position:relative;overflow:hidden;z-index:1;line-height:0;}
+.swiper-pagination{ }
+
+/*menu*/
+#indexIco p{ margin:1em -2% 0 0; padding:0; float:left; position:relative; line-height:0;}
+#indexIco a{ display:inline-block; width:48%; float:left; margin:0 2% 0.5em 0; text-align:center; background:#ff5a00; color:#fff; border-radius:0.3em; padding:1em 0;}
+#indexIco a b{font-size:2em; line-height:200%; font-weight:normal; vertical-align:middle;}
+#indexIco a i{ display:inline-block; width:3.5em; height:3.5em; margin-right:0.2em; overflow:hidden; vertical-align:middle;}
+#indexIco a i img{ width:100%; height:auto;}
+a#indexIco2{ background-color:#ff6900;}a#indexIco2 i img{ margin-top:-100%;}
+a#indexIco3{ background-color:#ff8701;}a#indexIco3 i img{ margin-top:-200%;}
+a#indexIco4{ background-color:#fea001;}a#indexIco4 i img{ margin-top:-300%;}
+a#indexIco5{ background-color:#0dbcb6;}a#indexIco5 i img{ margin-top:-400%;}
+a#indexIco6{ background-color:#21ace0;}a#indexIco6 i img{ margin-top:-500%;}
+a#indexIco7{ background-color:#0094fc;}a#indexIco7 i img{ margin-top:-600%;}
+a#indexIco8{ background-color:#2580dd;}a#indexIco8 i img{ margin-top:-700%;}
+
+/*电话*/
+#indexTelephone{ background:#ffffff; border-top:#cccccc 1px solid; border-bottom:#cccccc 1px solid; padding:1em; } 
+#indexTelephone a{color:#ff6600; text-align:center; display:block;}
+#ico_telephone{ display:inline-block; width:4em; height:4em; vertical-align:middle; margin-right:0.25em; float:left; overflow:hidden;}
+#ico_telephone img{ margin-top:-400%; width:100%;}
+#indexTelephone b{ font-size:3em; vertical-align:middle; line-height:130%; }
+#indexTelephone span{ display:inline-block; border:2px #ff6600 solid; border-radius:1em; font-size:2em; line-height:150%; margin-top:0.25em; float:right; padding:0 0.5em; vertical-align:middle; }
+
+@media screen and (max-width:480px){
+  #indexIco a b{font-size:1.5em; }
+  #indexIco a i{ display:inline-block; width:3em; height:3em;}
+  #ico_telephone{ width:3em; height:3em;}
+  #indexTelephone b{ font-size:2em; line-height:150%; float:left;}
+  #indexTelephone span{ font-size:1em; line-height:200%; padding:0 0.3em;}
+}
+
+/*产品直通车*/
+#indexPor{ border-top:#cfcfcf 1px solid;border-bottom:#cfcfcf 1px solid; margin:1em auto; overflow:hidden; padding-bottom:1em; background:url(../images/dott.png) center top repeat-y #fff;}
+#indexPor h2{ border-bottom:#cfcfcf 1px solid; margin:0; padding:0 0.5em; line-height:200%; background:#fff;}
+#indexPor a{ font-size:1rem; line-height:200%; display:inline-block; width:50%; float:left; text-align:center; padding:1em 0.5em 0 0.5em; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; overflow:hidden;}
+#indexPor a b{ display:inline-block; width:60%; border-radius:0 0.2em 0.2em 0; background:url(../images/angle.png) left center no-repeat #ff6600; background-size:auto 100%; color:#fff; font-weight:normal;}
+#indexPor a span{ display:inline-block; width:100%;white-space:normal; overflow:hidden; text-overflow:ellipsis; -o-text-overflow:ellipsis;}
+
+/*登录注册*/
+#LAR{ background:#fff; border-top:#cfcfcf 1px solid; text-align:center;}
+#LAR a{ font-size:1rem; line-height:250%; margin:0 0.5em}
+
+

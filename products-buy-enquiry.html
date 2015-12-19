@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=false">
+<title>还盘--化时代</title>
+<meta name="keywords" content="化时代,PA,DOP,DINP,DOTP,ESO,PE,PVC,苯酐,邻苯二甲酸二辛脂,邻苯二甲酸二异壬酯,对苯二甲酸二辛酯,环氧大豆油,聚乙烯,聚氯乙烯">
+<meta name="description" content="化时代">
+<link href="css/global.css" rel="stylesheet" type="text/css">
+<link href="css/sub.css" rel="stylesheet" type="text/css">
+<link href="css/mobiscroll.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!-- 页头 -->
+<div id="head" class="global_width">
+  <a class="headIco" id="ico_back" title="返回上一页" onclick="javascript:history.go(-1);"><i class="VMiddle"><img src="images/icos.png" /></i></a>
+  <div id="pageTitle">还盘</div>
+</div>
+
+<div id="release" class="global_width" style="margin-top:1em;">
+  <form action="#" method="post">
+    <p><span><i></i>公司名称：</span><input name="company" type="text" id="company" value="广东卓商网络科技有限公司"></p>
+    <p><span><i></i>价　　格：</span><span class="floatR">(元/吨)</span><input name="price" type="text" id="price"></p>
+    <p><span><i></i>数　　量：</span><span class="floatR">(吨)</span><input name="Number" type="text" id="Number"></p>
+    <p><span><i></i>交 货 地：</span><input name="deliveryAdd" type="text" id="deliveryAdd"></p>
+    <p><span><i>*</i>交货方式：</span>
+      <label><input type="radio" name="deliveryWay" value="自提" id="deliveryWay_0">自提</label>&nbsp;
+      <label><input type="radio" name="deliveryWay" value="送达" id="deliveryWay_1">送达</label>
+    </p>
+    <p><span><i>*</i>付款方式：</span>
+      <label><input type="radio" name="Payment" value="货到付款" id="Payment_0">货到付款</label>&nbsp;
+      <label><input type="radio" name="Payment" value="款到发货" id="Payment_1">款到发货</label>
+    </p>
+    <p><span><i>*</i>账　　期：</span><span class="floatR">天</span><input name="linkman" type="text" id="linkman"></p>
+    <p style="text-align:center;"><input type="submit" class="btn3" value="提 交"></p>
+    <p><b class="highlight">提示：</b>你可以先将货物加入我的关注，然后让卖方按照协商结果来修改订单价格</p>
+  </form>
+</div>
+
+<!--快速菜单栏-->
+<div id="cover"></div>
+<div id="quickNav">
+  <div class="global_width">
+    <a id="quickNav_logo"><img src="images/ico_quickNav.png" /></a>
+    <div id="quickNav_search" class="hide">
+      <form action="#" method="post">
+        <input type="text" value="请输入牌号" onfocus="if (value =='请输入牌号'){value =''}" onblur="if (value ==''){value='请输入牌号'}">
+      </form>
+    </div>
+    <div id="quickNav_ico" class="hide">
+      <a href="index.html" id="quickNav_ico1"><i><img src="images/ico_quickNav.png"/></i><br>首页</a>
+      <a href="userconter-orders.html" id="quickNav_ico2"><i><img src="images/ico_quickNav.png"/></i><br>我的订单</a>
+      <a href="release-buy.html" id="quickNav_ico3"><i><img src="images/ico_quickNav.png"/></i><br>发布需求</a>
+      <a href="release-sale.html" id="quickNav_ico4"><i><img src="images/ico_quickNav.png"/></i><br>发布供应</a>
+    </div>
+  </div>
+</div>
+</body>
+<script type="text/javascript" src="scripts/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="scripts/global.js"></script>
+<script type="text/javascript" src="scripts/mobiscroll.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  /*表单项适应宽度*/
+  function AdaptiveForm(obj){
+	  $(obj).each(function() {
+	  var spanSize = $(this).find('span').size();
+	  var myWidth = $(this).width();
+	  for(i=0; i<spanSize; i++){
+		  myWidth -= $(this).find('span').eq(i).outerWidth(true);
+	  }
+	  $(this).find('input[type="text"],input[type="submit"],textarea,select').css({'width':myWidth*0.95});
+	});
+  }
+  AdaptiveForm('#release p');
+   $(window).resize(function(){
+	  AdaptiveForm('#release p');
+  })
+  
+});
+</script>
+</html>

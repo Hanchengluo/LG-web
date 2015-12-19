@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=false">
+<title>发布需求--化时代</title>
+<meta name="keywords" content="化时代,PA,DOP,DINP,DOTP,ESO,PE,PVC,苯酐,邻苯二甲酸二辛脂,邻苯二甲酸二异壬酯,对苯二甲酸二辛酯,环氧大豆油,聚乙烯,聚氯乙烯">
+<meta name="description" content="化时代">
+<link href="css/global.css" rel="stylesheet" type="text/css">
+<link href="css/sub.css" rel="stylesheet" type="text/css">
+<link href="css/mobiscroll.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!-- 页头 -->
+<div id="head" class="global_width">
+  <a class="headIco" id="ico_back" title="返回上一页" onclick="javascript:history.go(-1);"><i class="VMiddle"><img src="images/icos.png" /></i></a>
+  <div id="pageTitle">发布需求</div>
+</div>
+
+<div id="release" class="global_width">
+  <div class="tit2">请填写需求信息</div>
+  <form action="#" method="post">
+    <p><span><i>*</i>品名：</span>
+      <select name="product" id="product">
+        <option value="PA">PA</option>
+        <option value="DOP">DOP</option>
+        <option value="DINP">DINP</option>
+        <option value="DOTP">DOTP</option>
+        <option value="ESO">ESO</option>
+        <option value="PVC">PVC</option>
+        <option value="PE">PE</option>
+      </select>
+    </p>
+    <p><span><i> </i>型号：</span><input name="Model" type="text" id="Model"></p>
+    <p><span><i>*</i>规格：</span><input name="spec" type="text" id="spec"></p>
+    <p><span><i> </i>等级：</span><input name="Grade" type="text" id="Grade"></p>
+    <p><span><i>*</i>产地：</span><input name="Origin" type="text" id="Origin"></p>
+    <p><span><i> </i>厂家：</span><input name="Manufactor" type="text" id="Manufactor"></p>
+    <p><span><i>*</i>数量：</span><span class="floatR">吨</span><input name="Number" type="text" id="Number"></p>
+    <p><span><i>*</i>预计单价：</span><span class="floatR">元/吨</span><input name="Price" type="text" id="Price"></p>
+    <p><span><i>*</i>需求有效期：</span><input name="validity" type="text" id="validity" class="getdate"></p>
+    <p><span><i>*</i>交货地：</span><input name="deliveryAdd" type="text" id="deliveryAdd"></p>
+    <p><span><i>*</i>交货方式：</span><input name="deliveryWay" type="text" id="deliveryWay"></p>
+    <p><span><i>*</i>付款方式：</span><input name="Payment" type="text" id="Payment"></p>
+    <p><span><i>*</i>送货地址：</span><input name="deliveryAdd2" type="text" id="deliveryAdd2"></p>
+    <p><span><i> </i>备注：</span><textarea name="Remarks" rows="4" id="Remarks"></textarea></p>
+    <p style="text-align:center;"><input type="submit" class="btn3" value="提 交"></p>
+  </form>
+</div>
+
+<!--快速菜单栏-->
+<div id="cover"></div>
+<div id="quickNav">
+  <div class="global_width">
+    <a id="quickNav_logo"><img src="images/ico_quickNav.png" /></a>
+    <div id="quickNav_search" class="hide">
+      <form action="#" method="post">
+        <input type="text" value="请输入牌号" onfocus="if (value =='请输入牌号'){value =''}" onblur="if (value ==''){value='请输入牌号'}">
+      </form>
+    </div>
+    <div id="quickNav_ico" class="hide">
+      <a href="index.html" id="quickNav_ico1"><i><img src="images/ico_quickNav.png"/></i><br>首页</a>
+      <a href="userconter-orders.html" id="quickNav_ico2"><i><img src="images/ico_quickNav.png"/></i><br>我的订单</a>
+      <a href="release-buy.html" id="quickNav_ico3"><i><img src="images/ico_quickNav.png"/></i><br>发布需求</a>
+      <a href="release-sale.html" id="quickNav_ico4"><i><img src="images/ico_quickNav.png"/></i><br>发布供应</a>
+    </div>
+  </div>
+</div>
+</body>
+<script type="text/javascript" src="scripts/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="scripts/global.js"></script>
+<script type="text/javascript" src="scripts/mobiscroll.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  /*表单项适应宽度*/
+  function AdaptiveForm(obj){
+	  $(obj).each(function() {
+	  var spanSize = $(this).find('span').size();
+	  var myWidth = $(this).width();
+	  for(i=0; i<spanSize; i++){
+		  myWidth -= $(this).find('span').eq(i).outerWidth(true);
+	  }
+	  $(this).find('input[type="text"],input[type="submit"],textarea,select').css({'width':myWidth*0.95});
+	});
+  }
+  AdaptiveForm('#release p');
+   $(window).resize(function(){
+	  AdaptiveForm('#release p');
+  })
+  
+  /*表单选择器*/
+  $('#product').mobiscroll().select({
+	  theme: 'android-holo-light',  // Specify theme like: theme: 'ios' or omit setting to use default
+	  lang: 'zh', 
+	  display: 'modal',
+	  headerText: '请选择品名', 
+	  minWidth: 200
+  });
+  var now = new Date();
+  $('.getdate').mobiscroll().date({
+	  theme: 'android-holo-light',
+	  lang: 'zh',
+	  display: 'modal',
+	  mode: 'scroller',
+	  //headerText: false,
+	  showNow: true,
+	  nowText: '今天',
+	  dateFormat: 'yy-mm-dd',
+	  minDate: new Date(now.getFullYear(), 1, 1), 
+      maxDate: new Date(now.getFullYear() + 5, 12, 31)
+  });
+  
+});
+</script>
+</html>

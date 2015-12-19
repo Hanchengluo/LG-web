@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=false">
+<title>我的关注--化时代</title>
+<meta name="keywords" content="化时代,PA,DOP,DINP,DOTP,ESO,PE,PVC,苯酐,邻苯二甲酸二辛脂,邻苯二甲酸二异壬酯,对苯二甲酸二辛酯,环氧大豆油,聚乙烯,聚氯乙烯">
+<meta name="description" content="化时代">
+<link href="css/global.css" rel="stylesheet" type="text/css">
+<link href="css/sub.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!-- 页头 -->
+<div id="head" class="global_width">
+  <a class="headIco" id="ico_back" title="返回上一页" onclick="javascript:history.go(-1);"><i class="VMiddle"><img src="images/icos.png" /></i></a>
+  <div id="pageTitle">我的关注</div>
+</div>
+
+<div class="global_width" id="search">
+  <form action="#" method="post">
+    <input type="text" name="keyword" id="keyword"><input type="submit" value="搜索">
+  </form>
+  <div class="blank"></div>
+</div>
+<div class="global_width" id="userconters">
+ <div class="userconter">
+    <p>编　　号：　<span>20151012123</span></p>
+    <p>品　　名：　<span>DOP</span></p>
+    <p>数　　量：　<span>300吨</span></p>
+    <p>单　　价：　<span>8500 元/吨</span></p>
+    <p>交 货 地：　<span>广州</span></p>
+    <p>状　　态：　<a class="blue">进行中</a></p>
+    <p>操　　作：　<a class="highlight">查看</a></p>
+ </div>
+ <div class="userconter">
+    <p>编　　号：　<span>20151012123</span></p>
+    <p>品　　名：　<span>DOP</span></p>
+    <p>数　　量：　<span>300吨</span></p>
+    <p>单　　价：　<span>8500 元/吨</span></p>
+    <p>交 货 地：　<span>广州</span></p>
+    <p>状　　态：　<a class="blue">进行中</a></p>
+    <p>操　　作：　<a class="highlight">查看</a></p>
+ </div>
+ <div class="userconter">
+    <p>编　　号：　<span>20151012123</span></p>
+    <p>品　　名：　<span>DOP</span></p>
+    <p>数　　量：　<span>300吨</span></p>
+    <p>单　　价：　<span>8500 元/吨</span></p>
+    <p>交 货 地：　<span>广州</span></p>
+    <p>状　　态：　<a class="gray">已过期</a></p>
+    <p>操　　作：　<a class="highlight">删除</a></p>
+ </div>
+ 
+</div>
+<div id="loadMore" class="global_width" data-page="1"><img src="images/loading.gif" id="loading"/><span id="load_span">点击加载更多</span></div>
+
+</body>
+<script type="text/javascript" src="scripts/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="scripts/global.js"></script>
+<script type="text/javascript"> 
+/*ajax加载数据*/
+var page;
+var content = $('#userconters');
+var nodata = false;
+var iCategoryId = $.getUrlParam('iCategoryId'); //取得分类ID
+$(function(){ 
+  $('#loadMore').bind('click',function(){
+	if(nodata){return false};
+	page = parseInt($(this).attr('data-page'))+1;//页数
+	$('#loading').fadeIn('fast');
+	$('#load_span').html('数据加载中...');
+    ajaxRead();
+  }); 
+  
+  function ajaxRead(){ 
+  var Thehtml='';
+  var ajaxurl='myattention-ajax.asp?iCategoryId='+iCategoryId+'&page='+page;//请求数据的页面
+  $.ajax({ 
+    type: 'POST',  
+	url: ajaxurl,
+	async: false,
+	datatype: 'json',
+	success:function(data){
+	  if(data!='' && data!='0' && data!=null && data.replace(/\s/g,"")!=null){
+		content.append(data);
+		$('#loadMore').attr('data-page',page);
+		//alert($('#loadMore').attr('data-page'));
+		$('#loading').fadeOut('fast');
+		$('#load_span').html('点击加载更多&gt;&gt;');
+	  }else{
+		  $('#loading').fadeOut('fast',function(){$("#load_span").empty().html('没有数据了！')});
+		  nodata = true;
+		}
+	}, 
+	error: function(err) { $("#load_span").empty().html('数据请求失败！')}
+  }); 
+  }
+  
+}) 
+</script>
+</html>

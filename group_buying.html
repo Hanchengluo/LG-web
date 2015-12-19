@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=false">
+<title>我要团购--化时代</title>
+<meta name="keywords" content="化时代,PA,DOP,DINP,DOTP,ESO,PE,PVC,苯酐,邻苯二甲酸二辛脂,邻苯二甲酸二异壬酯,对苯二甲酸二辛酯,环氧大豆油,聚乙烯,聚氯乙烯">
+<meta name="description" content="化时代">
+<link href="css/global.css" rel="stylesheet" type="text/css">
+<link href="css/sub.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!-- 页头 -->
+<div id="head" class="global_width">
+  <a class="headIco" id="ico_search2" href="search.html" title="搜索"><i class="VMiddle"><img src="images/icos.png" /></i></a>
+  <a class="headIco" id="ico_back" title="返回上一页" onclick="javascript:history.go(-1);"><i class="VMiddle"><img src="images/icos.png" /></i></a>
+  <div id="pageTitle">我要团购</div>
+</div>
+
+<!--分类-->
+<div id="class" class="global_width class2">
+  <div id="Roll">
+  <a href="#">全部</a><a href="#">PA</a><a href="#">DOP</a><a href="#">DINP</a><a href="#">DOTP</a><a href="#">ESO</a><a href="#" class="curr">PVC</a><a href="#">PE</a>
+  </div>
+</div>
+
+<div id="product" class="global_width">
+  <!--排序-->
+  <ul id="sort">
+    <li class="curr"><a href="#">默认</a></li>
+    <li><a href="#">委托盘</a></li>
+    <li><a href="#">供应盘</a></li>
+  </ul>
+  <div class="blank"></div>
+
+  <dl>
+    <dt><a href="group_buying-content.html"><b>PVC S-03</b><br>新疆天业 300吨</a></dt>
+    <dd><b>¥5800</b><br><a href="group_buying-content.html" class="btn1">团购详情</a></dd>
+  </dl>
+  <dl>
+    <dt><a href="group_buying-content.html"><b>PVC S-03</b><br>新疆天业 300吨</a></dt>
+    <dd><b>¥5800</b><br><a href="group_buying-content.html" class="btn1">团购详情</a></dd>
+  </dl>
+  <dl>
+    <dt><a href="group_buying-content.html"><b>PVC S-03</b><br>新疆天业 300吨</a></dt>
+    <dd><b>¥5800</b><br><a href="group_buying-content.html" class="btn1">团购详情</a></dd>
+  </dl>
+  <dl>
+    <dt><a href="group_buying-content.html"><b>PVC S-03</b><br>新疆天业 300吨</a></dt>
+    <dd><b>¥5800</b><br><a href="group_buying-content.html" class="btn1">团购详情</a></dd>
+  </dl>
+  <dl>
+    <dt><a href="group_buying-content.html"><b>PVC S-03</b><br>新疆天业 300吨</a></dt>
+    <dd><b>¥5800</b><br><a href="group_buying-content.html" class="btn1">团购详情</a></dd>
+  </dl>
+  <dl>
+    <dt><a href="group_buying-content.html"><b>PVC S-03</b><br>新疆天业 300吨</a></dt>
+    <dd><b>¥5800</b><br><a href="group_buying-content.html" class="btn1">团购详情</a></dd>
+  </dl>
+  <dl>
+    <dt><a href="group_buying-content.html"><b>PVC S-03</b><br>新疆天业 300吨</a></dt>
+    <dd><b>¥5800</b><br><a href="group_buying-content.html" class="btn1">团购详情</a></dd>
+  </dl>
+  <dl>
+    <dt><a href="group_buying-content.html"><b>PVC S-03</b><br>新疆天业 300吨</a></dt>
+    <dd><b>¥5800</b><br><a href="group_buying-content.html" class="btn1">团购详情</a></dd>
+  </dl>
+  
+</div>
+<div id="loadMore" class="global_width" data-page="1"><img src="images/loading.gif" id="loading"/><span id="load_span">点击加载更多</span></div>
+
+<!--快速菜单栏-->
+<div id="cover"></div>
+<div id="quickNav">
+  <div class="global_width">
+    <a id="quickNav_logo"><img src="images/ico_quickNav.png" /></a>
+    <div id="quickNav_search" class="hide">
+      <form action="#" method="post">
+        <input type="text" value="请输入牌号" onfocus="if (value =='请输入牌号'){value =''}" onblur="if (value ==''){value='请输入牌号'}">
+      </form>
+    </div>
+    <div id="quickNav_ico" class="hide">
+      <a href="index.html" id="quickNav_ico1"><i><img src="images/ico_quickNav.png"/></i><br>首页</a>
+      <a href="userconter-orders.html" id="quickNav_ico2"><i><img src="images/ico_quickNav.png"/></i><br>我的订单</a>
+      <a href="release-buy.html" id="quickNav_ico3"><i><img src="images/ico_quickNav.png"/></i><br>发布需求</a>
+      <a href="release-sale.html" id="quickNav_ico4"><i><img src="images/ico_quickNav.png"/></i><br>发布供应</a>
+    </div>
+  </div>
+</div>
+</body>
+<script type="text/javascript" src="scripts/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="scripts/global.js"></script>
+<script type="text/javascript"> 
+/*分类*/
+function showCurr(obj){
+  var Roll = $(obj).find('#Roll');
+  var RollWidth = Roll.width();
+  var objWidth = $(obj).innerWidth();
+  var currA = Roll.find('a.curr');
+  /*if(RollWidth <= objWidth || currA.length<0){return false};*/
+  var inPage = Math.floor(currA.position().left/objWidth);
+  Roll.stop(true,true).animate({scrollLeft:inPage*objWidth},400);
+}
+
+$(document).ready(function(){
+  showCurr('#class');
+});
+
+$(window).resize(function(){
+	showCurr('#class');
+})
+
+/*ajax加载数据*/
+var page;
+var content = $('#product');
+var nodata = false;
+var iCategoryId = $.getUrlParam('iCategoryId'); //取得分类ID
+$(function(){ 
+  $('#loadMore').bind('click',function(){
+	if(nodata){return false};
+	page = parseInt($(this).attr('data-page'))+1;//页数
+	$('#loading').fadeIn('fast');
+	$('#load_span').html('数据加载中...');
+    ajaxRead();
+  }); 
+  
+  function ajaxRead(){ 
+  var Thehtml='';
+  var ajaxurl='group_buying-ajax.asp?iCategoryId='+iCategoryId+'&page='+page;//请求数据的页面
+  $.ajax({ 
+    type: 'POST',  
+	url: ajaxurl,
+	async: false,
+	datatype: 'json',
+	success:function(data){
+	  if(data!='' && data!='0' && data!=null && data.replace(/\s/g,"")!=null){
+		content.append(data);
+		$('#loadMore').attr('data-page',page);
+		//alert($('#loadMore').attr('data-page'));
+		$('#loading').fadeOut('fast');
+		$('#load_span').html('点击加载更多&gt;&gt;');
+	  }else{
+		  $('#loading').fadeOut('fast',function(){$("#load_span").empty().html('没有数据了！')});
+		  nodata = true;
+		}
+	}, 
+	error: function(err) { $("#load_span").empty().html('数据请求失败！')}
+  }); 
+  }
+  
+}) 
+</script>
+</html>
+

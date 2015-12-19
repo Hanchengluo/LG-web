@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=false">
+<title>资讯搜索--化时代</title>
+<meta name="keywords" content="化时代,PA,DOP,DINP,DOTP,ESO,PE,PVC,苯酐,邻苯二甲酸二辛脂,邻苯二甲酸二异壬酯,对苯二甲酸二辛酯,环氧大豆油,聚乙烯,聚氯乙烯">
+<meta name="description" content="化时代">
+<link href="css/global.css" rel="stylesheet" type="text/css">
+<link href="css/sub.css" rel="stylesheet" type="text/css">
+<link href="css/mobiscroll.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!-- 页头 -->
+<div id="head" class="global_width">
+  <a class="headIco" id="ico_back" title="返回上一页" onclick="javascript:history.go(-1);"><i class="VMiddle"><img src="images/icos.png" /></i></a>
+  <div id="pageTitle">资讯搜索</div>
+</div>
+<form action="#" method="post">
+  <div id="release" class="global_width" style="margin:1.5em auto">
+    <p><span>选择类型：</span><span class="floatR"><img src="images/arrow.png" /></span>
+      <select name="type" id="type" onchange="selectChange()">
+        <option value="产品资讯">产品资讯</option>
+        <option value="市场研究">市场研究</option>
+        <option value="宏观资讯">宏观资讯</option>
+        <option value="要闻">要闻</option>
+      </select>
+    </p>
+    <p id="selectProduct"><span>选择品种：</span><span class="floatR"><img src="images/arrow.png" /></span>
+      <select name="product" id="product">
+        <option value="PA">PA</option>
+        <option value="DOP">DOP</option>
+        <option value="DINP">DINP</option>
+        <option value="DOTP">DOTP</option>
+        <option value="ESO">ESO</option>
+        <option value="PVC">PVC</option>
+        <option value="PE">PE</option>
+      </select>
+    </p>
+    <p class="point"><span>开始时间：</span><input name="startTime" type="text" id="startTime" class="getdate"></p>
+    <p class="point"><span>结束时间：</span><input name="finishTime" type="text" id="finishTime" class="getdate"></p>
+    <p class="point"><span>输入关键词：</span><input name="KeyWord" type="text" id="KeyWord" placeholder="关键词"></p>
+    <div class="blank"></div>
+  </div>
+
+  <p class="global_width2" ><input type="submit" class="btnB" value="搜 索"></p>
+</form>
+</body>
+<script type="text/javascript" src="scripts/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="scripts/global.js"></script>
+<script type="text/javascript" src="scripts/mobiscroll.js"></script>
+<script type="text/javascript">
+function selectChange(){
+ var selectedType = $('#type option:selected').text();
+ if(selectedType =='宏观资讯' || selectedType =='要闻'){
+	 $('#selectProduct').addClass('hide');
+  }else{
+	  $('#selectProduct').removeClass('hide');
+  }
+}
+$(document).ready(function(){
+  /*表单项适应宽度*/
+  function AdaptiveForm(obj){
+	  $(obj).each(function() {
+	  var spanSize = $(this).find('span').size();
+	  var myWidth = $(this).width();
+	  for(i=0; i<spanSize; i++){
+		  myWidth -= $(this).find('span').eq(i).outerWidth(true);
+	  }
+	  $(this).find('input[type="text"],input[type="submit"],textarea,select').css({'width':myWidth*0.95});
+	});
+  }
+  AdaptiveForm('#release p');
+   $(window).resize(function(){
+	  AdaptiveForm('#release p');
+  })
+  
+  /*表单选择器*/
+  $('#product,#type').mobiscroll().select({
+	  theme: 'android-holo-light',  // Specify theme like: theme: 'ios' or omit setting to use default
+	  lang: 'zh', 
+	  display: 'modal', 
+	  headerText: '请选择', 
+	  minWidth: 200
+  });
+  var now = new Date();
+  $('.getdate').val(now.getFullYear()+'-'+[now.getMonth()+1]+'-'+now.getDate());
+  $('.getdate').mobiscroll().date({
+	  theme: 'android-holo-light',
+	  lang: 'zh',
+	  display: 'modal',
+	  //headerText: false,
+	  showNow: true,
+	  nowText: '今天',
+	  dateFormat: 'yy-mm-dd',
+	  minDate: new Date(now.getFullYear(), 1, 1), 
+      maxDate: new Date(now.getFullYear() + 5, 12, 31)
+  });
+  
+});
+</script>
+</html>

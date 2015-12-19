@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+#head{ background:#0094de;}
+.headIco span{ color:#fff;}
+
+/*会员中心菜单*/
+#userMenu_blank{ height:5.5em;}
+#userMenu{ position:fixed; left:0; top:auto; bottom:0; z-index:99;}
+#menu_user{ background:#fff; border-top:#dbdbdb 1px solid; padding:1em 0 0.5em;}
+#menu_user a{ display:inline-block; width:25%; float:left; text-align:center;}
+#menu_user a.curr{ color:#ff6600;}
+#menu_user a i{ display:inline-block; height:2.5em; width:2.5em; overflow:hidden; overflow:hidden;}
+#menu_user a i img{ width:100%; height:auto;}
+#menu_user1.curr i img{ margin-top:-100%;}
+#menu_user a span{ font-size:1.2em; line-height:120%;}
+#menu_user2 i img{ margin-top:-200%;}#menu_user2.curr i img{ margin-top:-300%;}
+#menu_user3 i img{ margin-top:-400%;}#menu_user3.curr i img{ margin-top:-500%;}
+#menu_user4 i img{ margin-top:-600%;}#menu_user4.curr i img{ margin-top:-700%;}
+
+/*订单管理中心*/
+#userICO{ background:url(../images/dott.png) center top repeat-y #fff; text-align:center; border-bottom:#dbdbdb 1px solid;}
+#userICO a{ display:inline-block; width:50%; float:left; border-top:#dbdbdb 1px solid; padding:1em 0;}
+#userICO a i{ display:inline-block; width:35%; height:0; padding-bottom:35%; overflow:hidden; margin-bottom:0.6em;}
+#userICO a i img{ width:100%; height:auto;}
+#userICO a span{ font-size:1.6em; line-height:100%;}
+a#userICO2 i img{ margin-top:-100%;}
+a#userICO3 i img{ margin-top:-200%;}
+a#userICO4 i img{ margin-top:-300%;}
+a#userICO5 i img{ margin-top:-400%;}
+a#userICO6 i img{ margin-top:-500%;}
+
+/*会员管理中心*/
+#userList{ background:#fff;}
+#userList a{ display:block; width:100%; border-bottom:#dbdbdb 1px solid; padding:1em; background:url(../images/arrow.png) right center no-repeat; background-size:auto 25%; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;}
+#userList a i{display:inline-block; height:5em; width:5em; overflow:hidden; overflow:hidden; vertical-align:middle; margin-right:1em;}
+#userList a i img{ width:100%; height:auto;}
+#userList a span{ font-size:1.6em; line-height:100%;}

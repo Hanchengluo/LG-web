@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=false">
+<title>产品搜索--化时代</title>
+<meta name="keywords" content="化时代,PA,DOP,DINP,DOTP,ESO,PE,PVC,苯酐,邻苯二甲酸二辛脂,邻苯二甲酸二异壬酯,对苯二甲酸二辛酯,环氧大豆油,聚乙烯,聚氯乙烯">
+<meta name="description" content="化时代">
+<link href="css/global.css" rel="stylesheet" type="text/css">
+<link href="css/sub.css" rel="stylesheet" type="text/css">
+<link href="css/mobiscroll.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!-- 页头 -->
+<div id="head" class="global_width">
+  <a class="headIco" id="ico_back" title="返回上一页" onclick="javascript:history.go(-1);"><i class="VMiddle"><img src="images/icos.png" /></i></a>
+  <div id="pageTitle">产品搜索</div>
+</div>
+<form action="#" method="post">
+  <div id="release" class="global_width" style="margin:1.5em auto">
+    <p><span>选择类型：</span><span class="floatR"><img src="images/arrow.png" /></span>
+      <select name="type" id="type">
+        <option value="现货">现货</option>
+        <option value="在途">在途</option>
+        <option value="团购">团购</option>
+      </select>
+    </p>
+    <p><span>选择品种：</span><span class="floatR"><img src="images/arrow.png" /></span>
+      <select name="product" id="product">
+        <option value="PA">PA</option>
+        <option value="DOP">DOP</option>
+        <option value="DINP">DINP</option>
+        <option value="DOTP">DOTP</option>
+        <option value="ESO">ESO</option>
+        <option value="PVC">PVC</option>
+        <option value="PE">PE</option>
+      </select>
+    </p>
+    <p class="point"><span>输入厂家　：</span><input name="Manufactor" type="text" id="Manufactor" placeholder="台湾三毛五"></p>
+    <p class="point"><span>输入关键词：</span><input name="KeyWord" type="text" id="KeyWord" placeholder="关键词"></p>
+    <div class="blank"></div>
+  </div>
+
+  <p class="global_width2" ><input type="submit" class="btnB" value="搜 索" ></p>
+</form>
+</body>
+<script type="text/javascript" src="scripts/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="scripts/global.js"></script>
+<script type="text/javascript" src="scripts/mobiscroll.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  /*表单项适应宽度*/
+  function AdaptiveForm(obj){
+	  $(obj).each(function() {
+	  var spanSize = $(this).find('span').size();
+	  var myWidth = $(this).width();
+	  for(i=0; i<spanSize; i++){
+		  myWidth -= $(this).find('span').eq(i).outerWidth(true);
+	  }
+	  $(this).find('input[type="text"],input[type="submit"],textarea,select').css({'width':myWidth*0.95});
+	});
+  }
+  AdaptiveForm('#release p');
+   $(window).resize(function(){
+	  AdaptiveForm('#release p');
+  })
+  
+  /*表单选择器*/
+  $('#product,#type').mobiscroll().select({
+	  theme: 'android-holo-light',  // Specify theme like: theme: 'ios' or omit setting to use default
+	  lang: 'zh', 
+	  display: 'modal', 
+	  headerText: '请选择', 
+	  minWidth: 200
+  });
+  
+});
+</script>
+</html>

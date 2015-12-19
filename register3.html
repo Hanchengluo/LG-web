@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=false">
+<title>注册成功--化时代</title>
+<meta name="keywords" content="化时代,PA,DOP,DINP,DOTP,ESO,PE,PVC,苯酐,邻苯二甲酸二辛脂,邻苯二甲酸二异壬酯,对苯二甲酸二辛酯,环氧大豆油,聚乙烯,聚氯乙烯">
+<meta name="description" content="化时代">
+<link href="css/global.css" rel="stylesheet" type="text/css">
+<link href="css/sub.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!-- 页头 -->
+<div id="head" class="global_width">
+  <a class="headIco" id="ico_back" title="返回上一页" onclick="javascript:history.go(-1);"><i class="VMiddle"><img src="images/icos.png" /></i></a>
+  <div id="pageTitle">注册成功</div>
+</div>
+
+<div class="global_width" id="success">
+  <p><img src="images/Success.png" style=" width:5em; height:auto;" /></p>
+  <h2>林凡心，恭喜您注册成功！</h2>
+  <h3>请牢记您的账号：13763335268</h3>
+  <h4>密码：123123</h4>
+  <p><a href="index.html" id="btn3" class="btn3" style="width:90%; padding:0;">返回首页(10秒后返回首页)</a></p>
+  <p><a href="about_company.html" class="btn5" style="width:90%; padding:0">到会员中心补充公司资料</a></p>
+</div>
+
+</body>
+<script type="text/javascript" src="scripts/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="scripts/global.js"></script>
+<script type="text/javascript"> 
+var t=10;//设定跳转的时间 
+setInterval("refer()",1000); //启动1秒定时 
+function refer(){  
+    if(t==0){ 
+        location="index.html"; //#设定跳转的链接地址 
+    } 
+    document.getElementById('btn3').innerHTML='返回首页('+t+'秒后返回首页)'; // 显示倒计时 
+    t--;
+} 
+</script> 
+</html>

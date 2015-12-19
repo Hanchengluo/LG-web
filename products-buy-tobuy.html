@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=false">
+<title>填写认购信息--化时代</title>
+<meta name="keywords" content="化时代,PA,DOP,DINP,DOTP,ESO,PE,PVC,苯酐,邻苯二甲酸二辛脂,邻苯二甲酸二异壬酯,对苯二甲酸二辛酯,环氧大豆油,聚乙烯,聚氯乙烯">
+<meta name="description" content="化时代">
+<link href="css/global.css" rel="stylesheet" type="text/css">
+<link href="css/sub.css" rel="stylesheet" type="text/css">
+<link href="css/mobiscroll.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!-- 页头 -->
+<div id="head" class="global_width">
+  <a class="head_link" href="products-buy-help.html">协助撮合</a>
+  <a class="headIco" id="ico_back" title="返回上一页" onclick="javascript:history.go(-1);"><i class="VMiddle"><img src="images/icos.png" /></i></a>
+  <div id="pageTitle">填写认购信息</div>
+</div>
+
+<div id="release" class="global_width" style="margin-top:1em;">
+  <form action="#" method="post">
+    <p><span><i>*</i>公司名称：</span><input name="company" type="text" id="company"></p>
+    <p><span><i>*</i>联系人：</span><input name="linkman" type="text" id="linkman"></p>
+    <p><span><i>*</i>手机号码：</span><input name="Phone" type="text" id="Phone"></p>
+    <p><span><i>*</i>购买数量：</span><span class="floatR">(吨)</span><input name="Number" type="text" id="Number"></p>
+    <p><span><i> </i>起订量：</span><span class="floatR">(吨)</span><input name="minNumber" type="text" id="minNumber"></p>
+    <p><span><i>*</i>交货方式：</span><input name="deliveryWay" type="text" id="deliveryWay"></p>
+    <p><span><i>*</i>收货地址：</span><input name="receivingAdd" type="text" id="receivingAdd"></p>
+    <p><span><i>*</i>付款方式：</span><input name="Payment" type="text" id="Payment"></p>
+    <p><span><i></i>收货时间：</span><span class="floatR">之前</span><input name="deliveryTime" type="text" id="deliveryTime" class="getdate"></p>
+    <p><span><i> </i>买家留言：</span><textarea name="Remarks" rows="4" id="Remarks"></textarea></p>
+    <p style="text-align:center;"><input type="submit" class="btn3" value="提 交"></p>
+  </form>
+</div>
+
+<!--快速菜单栏-->
+<div id="cover"></div>
+<div id="quickNav">
+  <div class="global_width">
+    <a id="quickNav_logo"><img src="images/ico_quickNav.png" /></a>
+    <div id="quickNav_search" class="hide">
+      <form action="#" method="post">
+        <input type="text" value="请输入牌号" onfocus="if (value =='请输入牌号'){value =''}" onblur="if (value ==''){value='请输入牌号'}">
+      </form>
+    </div>
+    <div id="quickNav_ico" class="hide">
+      <a href="index.html" id="quickNav_ico1"><i><img src="images/ico_quickNav.png"/></i><br>首页</a>
+      <a href="userconter-orders.html" id="quickNav_ico2"><i><img src="images/ico_quickNav.png"/></i><br>我的订单</a>
+      <a href="release-buy.html" id="quickNav_ico3"><i><img src="images/ico_quickNav.png"/></i><br>发布需求</a>
+      <a href="release-sale.html" id="quickNav_ico4"><i><img src="images/ico_quickNav.png"/></i><br>发布供应</a>
+    </div>
+  </div>
+</div>
+</body>
+<script type="text/javascript" src="scripts/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="scripts/global.js"></script>
+<script type="text/javascript" src="scripts/mobiscroll.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  /*表单项适应宽度*/
+  function AdaptiveForm(obj){
+	  $(obj).each(function() {
+	  var spanSize = $(this).find('span').size();
+	  var myWidth = $(this).width();
+	  for(i=0; i<spanSize; i++){
+		  myWidth -= $(this).find('span').eq(i).outerWidth(true);
+	  }
+	  $(this).find('input[type="text"],input[type="submit"],textarea,select').css({'width':myWidth*0.95});
+	});
+  }
+  AdaptiveForm('#release p');
+   $(window).resize(function(){
+	  AdaptiveForm('#release p');
+  })
+  
+  /*表单选择器*/
+  var now = new Date();
+  $('.getdate').mobiscroll().date({
+	  theme: 'android-holo-light',
+	  lang: 'zh',
+	  display: 'modal',
+	  //headerText: false,
+	  showNow: true,
+	  nowText: '今天',
+	  dateFormat: 'yy-mm-dd',
+	  minDate: new Date(now.getFullYear(), 1, 1), 
+      maxDate: new Date(now.getFullYear() + 5, 12, 31)
+  });
+  
+});
+</script>
+</html>
