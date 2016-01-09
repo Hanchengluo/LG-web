@@ -24,6 +24,7 @@ div,ul,li,dl,dt,dd,form{ margin:0; padding:0;list-style:none;}
 body,td,input,select,textarea{ -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 img, object, embed, video {max-width: 100%;border:0;}
 input,select{ vertical-align:middle;}
+input[type=button], input[type=submit], input[type=file], button { cursor: pointer; -webkit-appearance: none; }
 p{ margin:13px auto; padding:0;}
 hr{ border-top:rgba(0,0,0,0.5) 1px solid; border-bottom:none; background:none; border-left:none; border-right:none; padding:0; margin:1rem auto; clear:both; max-width:720px;}
 *{-webkit-text-size-adjust:none;/*解决webkit内核浏览器强制最小字体*/ box-sizing:border-box;-moz-box-sizing:border-box; -webkit-box-sizing:border-box;} 
