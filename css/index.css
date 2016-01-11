@@ -10,16 +10,17 @@
 #indexIco a b{font-size:2em; line-height:200%; font-weight:normal; vertical-align:middle;}
 #indexIco a i{ display:inline-block; width:3.5em; height:3.5em; margin-right:0.2em; overflow:hidden; vertical-align:middle;}
 #indexIco a i img{ width:100%; height:auto;}
+
 a#indexIco2{ background-color:#ff6900;}a#indexIco2 i img{ margin-top:-100%;}
 a#indexIco3{ background-color:#ff8701;}a#indexIco3 i img{ margin-top:-200%;}
-a#indexIco4{ background-color:#fea001;}a#indexIco4 i img{ margin-top:-300%;}
-a#indexIco5{ background-color:#0dbcb6;}a#indexIco5 i img{ margin-top:-400%;}
+a#indexIco4{ background-color:#fea001;}a#indexIco4 i img{ margin-top:-700%;}
+a#indexIco5{ background-color:#0dbcb6;}a#indexIco5 i img{ margin-top:-600%;}
 a#indexIco6{ background-color:#21ace0;}a#indexIco6 i img{ margin-top:-500%;}
-a#indexIco7{ background-color:#0094fc;}a#indexIco7 i img{ margin-top:-600%;}
-a#indexIco8{ background-color:#2580dd;}a#indexIco8 i img{ margin-top:-700%;}
+a#indexIco7{ background-color:#0094fc;}a#indexIco7 i img{ margin-top:-400%;}
+a#indexIco8{ background-color:#2580dd;}a#indexIco8 i img{ margin-top:-300%;}
 
 /*电话*/
-#indexTelephone{ background:#ffffff; border-top:#cccccc 1px solid; border-bottom:#cccccc 1px solid; padding:1em; } 
+#indexTelephone{ background:#ffffff; border-top:#cccccc 1px solid; border-bottom:#cccccc 1px solid; padding:1em; }
 #indexTelephone a{color:#ff6600; text-align:center; display:block;}
 #ico_telephone{ display:inline-block; width:4em; height:4em; vertical-align:middle; margin-right:0.25em; float:left; overflow:hidden;}
 #ico_telephone img{ margin-top:-400%; width:100%;}
