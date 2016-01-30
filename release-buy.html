@@ -88,13 +88,13 @@ $(document).ready(function(){
    $(window).resize(function(){
 	  AdaptiveForm('#release p');
   })
-  
+
   /*表单选择器*/
   $('#product').mobiscroll().select({
 	  theme: 'android-holo-light',  // Specify theme like: theme: 'ios' or omit setting to use default
-	  lang: 'zh', 
+	  lang: 'zh',
 	  display: 'modal',
-	  headerText: '请选择品名', 
+	  headerText: '请选择品名',
 	  minWidth: 200
   });
   var now = new Date();
@@ -107,10 +107,10 @@ $(document).ready(function(){
 	  showNow: true,
 	  nowText: '今天',
 	  dateFormat: 'yy-mm-dd',
-	  minDate: new Date(now.getFullYear(), 1, 1), 
+	  minDate: new Date(now.getFullYear(), 1, 1),
       maxDate: new Date(now.getFullYear() + 5, 12, 31)
   });
-  
+
 });
 </script>
 </html>

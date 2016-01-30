@@ -6,6 +6,7 @@
 <title>填写认购信息--化时代</title>
 <meta name="keywords" content="化时代,PA,DOP,DINP,DOTP,ESO,PE,PVC,苯酐,邻苯二甲酸二辛脂,邻苯二甲酸二异壬酯,对苯二甲酸二辛酯,环氧大豆油,聚乙烯,聚氯乙烯">
 <meta name="description" content="化时代">
+<link rel="stylesheet" href="css/layer.css">
 <link href="css/global.css" rel="stylesheet" type="text/css">
 <link href="css/sub.css" rel="stylesheet" type="text/css">
 <link href="css/mobiscroll.css" rel="stylesheet" type="text/css">
@@ -27,7 +28,7 @@
     <p><span><i>*</i>购买数量：</span><span class="floatR">(吨)</span><input name="Number" type="text" id="Number"></p>
     <p><span><i> </i>起订量：</span><span class="floatR">(吨)</span><input name="minNumber" type="text" id="minNumber"></p>
     <p><span><i>*</i>交货方式：</span><input name="deliveryWay" type="text" id="deliveryWay"></p>
-    <p><span><i>*</i>收货地址：</span><input name="receivingAdd" type="text" id="receivingAdd"></p>
+    <p><span><i>*</i>收货地址：</span><input name="receivingAdd" type="text" onclick="address()" id="receivingAdd"></p>
     <p><span><i>*</i>付款方式：</span><input name="Payment" type="text" id="Payment"></p>
     <p><span><i></i>收货时间：</span><span class="floatR">之前</span><input name="deliveryTime" type="text" id="deliveryTime" class="getdate"></p>
     <p><span><i> </i>买家留言：</span><textarea name="Remarks" rows="4" id="Remarks"></textarea></p>
@@ -74,7 +75,7 @@ $(document).ready(function(){
    $(window).resize(function(){
 	  AdaptiveForm('#release p');
   })
-  
+
   /*表单选择器*/
   var now = new Date();
   $('.getdate').mobiscroll().date({
@@ -85,10 +86,28 @@ $(document).ready(function(){
 	  showNow: true,
 	  nowText: '今天',
 	  dateFormat: 'yy-mm-dd',
-	  minDate: new Date(now.getFullYear(), 1, 1), 
+	  minDate: new Date(now.getFullYear(), 1, 1),
       maxDate: new Date(now.getFullYear() + 5, 12, 31)
   });
-  
 });
+</script>
+
+<script src="scripts/layer.js" ></script>
+<script type="text/javascript">
+var address = function(){
+    layer.open({
+        type: 1,
+        content: '<h2>选择省</h2><ul><li><a href="##">广东省</a></li><li><a href="##">福建省</a></li><li><a href="##">山西省</a></li><li><a href="##">福建省</a></li><li><a href="##">广东省</a></li><li><a href="##">福建省</a></li><li><a href="##">山西省</a></li><li><a href="##">福建省</a></li><li><a href="##">广东省</a></li><li><a href="##">福建省</a></li><li><a href="##">山西省</a></li><li><a href="##">福建省</a></li><li><a href="##">广东省</a></li><li><a href="##">福建省</a></li><li><a href="##">山西省</a></li><li><a href="##">福建省</a></li><li><a href="##">广东省</a></li><li><a href="##">福建省</a></li><li><a href="##">山西省</a></li><li><a href="##">福建省</a></li><li><a href="##">广东省</a></li><li><a href="##">福建省</a></li><li><a href="##">山西省</a></li><li><a href="##">福建省</a></li></ul>',
+        anim: true,
+        className:'address-popuo',
+        btn:['取消','确定'],
+        no: function(){
+            layer.open({content: '你点了确认', time: 1});
+        },
+        yes: function(){
+            layer.open({content: '你选择了取消', time: 1});
+        }
+    });
+};
 </script>
 </html>
